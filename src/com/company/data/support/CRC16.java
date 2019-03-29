@@ -1,5 +1,7 @@
 package com.company.data.support;
 
+import java.util.List;
+
 /**
  * Создание контрольной суммы
  */
@@ -24,6 +26,12 @@ public class CRC16 {
     }
 
     public void update(byte[] array) {
+        for (byte anArray : array) {
+            update(anArray);
+        }
+    }
+
+    public void update(List<Byte> array) {
         for (byte anArray : array) {
             update(anArray);
         }

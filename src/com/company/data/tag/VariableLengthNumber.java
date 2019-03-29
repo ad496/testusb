@@ -3,10 +3,10 @@ package com.company.data.tag;
 /**
  * Реализация типа тэга VLN
  */
-class VariableLengthNumber {
+public class VariableLengthNumber {
     private final long value;
 
-    VariableLengthNumber(byte[] array) {
+    public VariableLengthNumber(byte[] array) {
         long result = 0L;
         if (array.length != 0) {
             result = (((long) array[array.length - 1] & 0xff) << (array.length - 1) * 8);
@@ -19,7 +19,7 @@ class VariableLengthNumber {
 
     }
 
-    long getValue() {
+    public long getValue() {
         return value;
     }
 }
